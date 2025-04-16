@@ -30,6 +30,22 @@ public class Main {
                     agendas.getFirst().add(1, number);
                     break;
                 case 2:
+                    Boolean noTens1 = false;
+                    System.out.println("Digite o Nome do contato que voce gostaria de pesquisar\n");
+                    String pesqui = scanner.nextLine();
+                    for (ArrayList i : agendas){
+                        if (i.contains(pesqui.trim())){
+                            System.out.println(" Contado: "+i.get(0)+" o Numero deste contato: "+i.get(1));;
+                            break;
+                        }
+                        else {
+                            noTens1 = true;
+                        }
+
+                    }
+                    if (noTens1){
+                        System.out.println("O contato que voce digitou nao tem na Agenta");
+                    }
                     break;
                 case 3:
                     System.out.println("Voce Apresenta "+agendas.size()+ " contatos em sua Agentas\n");
