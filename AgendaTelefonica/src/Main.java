@@ -26,7 +26,7 @@ public class Main {
                     System.out.println("Digite o numero do Contatato que voce gostaria de adicionar\n");
                     String number = scanner.nextLine();
                     agendas.addFirst(new ArrayList<>());
-                    agendas.getFirst().add(contact);
+                    agendas.getFirst().add(contact.trim());
                     agendas.getFirst().add(1, number);
                     break;
                 case 2:
@@ -38,6 +38,22 @@ public class Main {
                     }
                     break;
                 case 4:
+                    Boolean noTens = false;
+                    System.out.println("Digite o Nome do contato que voce gostaria de excluir\n");
+                    String remover = scanner.nextLine();
+                    for (ArrayList i : agendas){
+                        if (i.contains(remover.trim())){
+                            agendas.remove(i);
+                            break;
+                        }
+                        else {
+                            noTens = true;
+                        }
+
+                    }
+                    if (noTens){
+                        System.out.println("O contato que voce digitou nao tem na Agenta");
+                    }
                     break;
                 default:
                     System.out.println("O Numero que voce digitou na Existe");
