@@ -12,6 +12,7 @@ public class Main {
                     "1 - Adicionar Novo Mudero de contato\n" +
                     "2 - buscar Telefone por Nome\n" +
                     "3 - Listar Todos os Contatos\n" +
+                    "4 - Remover Contato" +
                     "Digite o Numero da funcao");
             int option = scanner.nextInt();
             scanner.nextLine();
@@ -31,13 +32,12 @@ public class Main {
                 case 2:
                     break;
                 case 3:
+                    System.out.println("Voce Apresenta "+agendas.size()+ " contatos em sua Agentas\n");
                     for (ArrayList i : agendas) {
-                        System.out.println(i);
+                        System.out.println("Contato: "+i.get(0)+" Numero :"+i.get(1));
                     }
                     break;
                 case 4:
-                    break;
-                case 5:
                     break;
                 default:
                     System.out.println("O Numero que voce digitou na Existe");
